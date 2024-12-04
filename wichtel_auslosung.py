@@ -9,9 +9,9 @@ df_this_years_contestants = pd.read_csv(
 
 def matches():
     illegal_matchings = get_illegal_matchings()
-    hurensohn = False
+    typ = False
     matches = {}
-    while not hurensohn:
+    while not typ:
         alreadyMatched = []
         matches = {}
         for friend in df_this_years_contestants:
@@ -23,7 +23,7 @@ def matches():
             matches[friend] = random_mapping
             alreadyMatched.append(random_mapping)
             if (len(alreadyMatched) == len(df_this_years_contestants)):
-                hurensohn = True
+                typ = True
     return matches
 
 
